@@ -1,0 +1,6 @@
+numpy
+matplotlib
+pennylane
+torch
+
+

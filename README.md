@@ -60,14 +60,16 @@ Gradient variance decreases monotonically as noise strength increases, indicatin
 noise-induced gradient suppression is not a fine-tuned effect but a robust phenomenon
 that worsens continuously with increasing device noise.
 
+
+```markdown
 ## Reproducing the Results
 
 To reproduce the main figure:
 
 ```bash
 conda activate qml
-python experiments/depth_sweep_noiseless_avg.py
-python experiments/depth_sweep_noisy_avg.py
-python experiments/plot_gradients.py
+python experiments/averaging/noiseless_avg.py
+python experiments/averaging/noisy_avg.py
+python experiments/plot_depth.py
 
 

@@ -10,18 +10,22 @@ and show that noise significantly accelerates gradient collapse compared to the
 noiseless baseline, even at small system sizes.
 
 ## Motivation
+
 While variational quantum models have shown promise for learning tasks, their trainability is severely limited in practice.
 This work focuses on understanding how intrinsic optimization barriers interact with extrinsic noise present in NISQ devices.
 
 ## Status
+
 Status: Results complete (open to extensions)
 
 ## Planned Directions
-- Analysis of barren plateaus in noiseless vs noisy regimes  
-- Study of gradient variance scaling with circuit depth  
-- Investigation of noise-induced phase transitions in trainability  
+
+- Analysis of barren plateaus in noiseless vs noisy regimes
+- Study of gradient variance scaling with circuit depth
+- Investigation of noise-induced phase transitions in trainability
 
 ## Limitations
+
 This project uses classical simulation of quantum circuits and does not target near-term hardware deployment.
 
 ## Noise-Induced Gradient Collapse
@@ -43,6 +47,18 @@ This indicates that noise can induce barren-plateau-like behavior at significant
 shallower depths, limiting the effective trainability of deep variational circuits
 on NISQ devices.
 
+## Robustness to Noise Strength
+
+To test whether the observed gradient collapse is sensitive to a specific noise level,
+we perform a sweep over depolarizing noise strengths at fixed circuit depth (depth = 8),
+averaging gradient variance over 10 random initializations.
+
+![Noise strength sweep](results/gradient_variance_noise_sweep.png)
+
+**Observation.**
+Gradient variance decreases monotonically as noise strength increases, indicating that
+noise-induced gradient suppression is not a fine-tuned effect but a robust phenomenon
+that worsens continuously with increasing device noise.
 
 ## Reproducing the Results
 
@@ -53,4 +69,6 @@ conda activate qml
 python experiments/depth_sweep_noiseless_avg.py
 python experiments/depth_sweep_noisy_avg.py
 python experiments/plot_gradients.py
+
+
 

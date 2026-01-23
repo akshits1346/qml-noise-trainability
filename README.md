@@ -61,7 +61,6 @@ noise-induced gradient suppression is not a fine-tuned effect but a robust pheno
 that worsens continuously with increasing device noise.
 
 
-```markdown
 ## Reproducing the Results
 
 To reproduce the main figure:

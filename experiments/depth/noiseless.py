@@ -4,7 +4,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 import csv
-from training.qnn import QuantumNeuralNetwork
+from models.qnn import QuantumNeuralNetwork
 from gradients.parameter_shift import parameter_shift_gradient
 from gradients.statistics import gradient_statistics
 
